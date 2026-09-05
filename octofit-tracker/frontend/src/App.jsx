@@ -5,6 +5,7 @@ import Teams from './components/Teams.jsx'
 import Users from './components/Users.jsx'
 import Workouts from './components/Workouts.jsx'
 import { apiBaseUrl, apiEnvironmentLabel } from './api.js'
+import octofitLogo from './assets/octofit-logo.png'
 import './App.css'
 
 function App() {
@@ -15,13 +16,17 @@ function App() {
     { to: '/leaderboard', label: 'Leaderboard' },
     { to: '/workouts', label: 'Workouts' },
   ]
+  const currentYear = new Date().getFullYear()
 
   return (
     <div className="app-shell">
       <header className="app-header">
-        <div>
-          <p className="eyebrow">OctoFit Tracker</p>
-          <h1>Training data across the whole team.</h1>
+        <div className="brand">
+          <img alt="OctoFit Tracker logo" className="brand-logo" src={octofitLogo} />
+          <div>
+            <p className="eyebrow">OctoFit Tracker</p>
+            <h1>Training data across the whole team.</h1>
+          </div>
         </div>
         <div className="api-status" aria-label="Current API URL">
           <span>{apiEnvironmentLabel}</span>
@@ -47,6 +52,10 @@ function App() {
           <Route path="/workouts" element={<Workouts />} />
         </Routes>
       </main>
+
+      <footer className="app-footer">
+        <p>&copy; {currentYear} OctoFit Tracker. Built for team fitness, together.</p>
+      </footer>
     </div>
   )
 }
