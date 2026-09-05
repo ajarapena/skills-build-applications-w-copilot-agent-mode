@@ -1,7 +1,9 @@
 import ResourceList from './ResourceList.jsx'
 
 function Teams() {
-  const teamsApiEndpoint = '/api/teams/'
+  const teamsApiEndpoint = import.meta.env.VITE_CODESPACE_NAME
+    ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/teams/`
+    : '/api/teams/'
 
   return (
     <ResourceList

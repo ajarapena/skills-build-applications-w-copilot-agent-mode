@@ -1,7 +1,9 @@
 import ResourceList from './ResourceList.jsx'
 
 function Leaderboard() {
-  const leaderboardApiEndpoint = '/api/leaderboard/'
+  const leaderboardApiEndpoint = import.meta.env.VITE_CODESPACE_NAME
+    ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/leaderboard/`
+    : '/api/leaderboard/'
 
   return (
     <ResourceList

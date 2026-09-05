@@ -1,7 +1,9 @@
 import ResourceList from './ResourceList.jsx'
 
 function Activities() {
-  const activitiesApiEndpoint = '/api/activities/'
+  const activitiesApiEndpoint = import.meta.env.VITE_CODESPACE_NAME
+    ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/activities/`
+    : '/api/activities/'
 
   return (
     <ResourceList

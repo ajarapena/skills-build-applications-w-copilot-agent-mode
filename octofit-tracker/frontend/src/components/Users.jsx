@@ -1,7 +1,9 @@
 import ResourceList from './ResourceList.jsx'
 
 function Users() {
-  const usersApiEndpoint = '/api/users/'
+  const usersApiEndpoint = import.meta.env.VITE_CODESPACE_NAME
+    ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/users/`
+    : '/api/users/'
 
   return (
     <ResourceList

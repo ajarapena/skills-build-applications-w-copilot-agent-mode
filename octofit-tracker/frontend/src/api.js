@@ -37,6 +37,10 @@ export function normalizeCollection(payload) {
 }
 
 export function buildApiEndpoint(apiPath) {
+  if (apiPath.startsWith('http')) {
+    return apiPath
+  }
+
   return `${apiBaseUrl}${apiPath}`
 }
 

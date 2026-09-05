@@ -1,7 +1,9 @@
 import ResourceList from './ResourceList.jsx'
 
 function Workouts() {
-  const workoutsApiEndpoint = '/api/workouts/'
+  const workoutsApiEndpoint = import.meta.env.VITE_CODESPACE_NAME
+    ? `https://${import.meta.env.VITE_CODESPACE_NAME}-8000.app.github.dev/api/workouts/`
+    : '/api/workouts/'
 
   return (
     <ResourceList
