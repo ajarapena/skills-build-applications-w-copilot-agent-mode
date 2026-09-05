@@ -1,9 +1,11 @@
 import ResourceList from './ResourceList.jsx'
 
 function Workouts() {
+  const workoutsApiEndpoint = '/api/workouts/'
+
   return (
     <ResourceList
-      componentName="workouts"
+      apiPath={workoutsApiEndpoint}
       title="Workouts"
       description="Suggested training sessions for different fitness levels."
       emptyMessage="No workout suggestions are available yet."

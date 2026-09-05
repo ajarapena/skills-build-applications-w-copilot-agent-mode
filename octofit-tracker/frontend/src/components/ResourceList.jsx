@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 
-import { fetchCollection } from '../api.js'
+import { buildApiEndpoint, fetchCollection } from '../api.js'
 
-function ResourceList({ componentName, description, emptyMessage, renderItem, title }) {
+function ResourceList({ apiPath, description, emptyMessage, renderItem, title }) {
   const [state, setState] = useState({ error: '', items: [], status: 'loading' })
 
   useEffect(() => {
@@ -12,7 +12,7 @@ function ResourceList({ componentName, description, emptyMessage, renderItem, ti
       setState({ error: '', items: [], status: 'loading' })
 
       try {
-        const items = await fetchCollection(componentName)
+        const items = await fetchCollection(apiPath)
 
         if (isActive) {
           setState({ error: '', items, status: 'loaded' })
@@ -29,13 +29,13 @@ function ResourceList({ componentName, description, emptyMessage, renderItem, ti
     return () => {
       isActive = false
     }
-  }, [componentName])
+  }, [apiPath])
 
   return (
     <section className="resource-section">
       <div className="resource-header">
         <div>
-          <p className="section-label">/api/{componentName}/</p>
+          <p className="section-label">{buildApiEndpoint(apiPath)}</p>
           <h2>{title}</h2>
           <p>{description}</p>
         </div>

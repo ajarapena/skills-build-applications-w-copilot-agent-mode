@@ -1,9 +1,11 @@
 import ResourceList from './ResourceList.jsx'
 
 function Activities() {
+  const activitiesApiEndpoint = '/api/activities/'
+
   return (
     <ResourceList
-      componentName="activities"
+      apiPath={activitiesApiEndpoint}
       title="Activities"
       description="Recent workouts logged by OctoFit members."
       emptyMessage="No activities have been logged yet."

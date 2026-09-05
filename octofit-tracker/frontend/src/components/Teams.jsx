@@ -1,9 +1,11 @@
 import ResourceList from './ResourceList.jsx'
 
 function Teams() {
+  const teamsApiEndpoint = '/api/teams/'
+
   return (
     <ResourceList
-      componentName="teams"
+      apiPath={teamsApiEndpoint}
       title="Teams"
       description="Training groups with member rosters and team focus areas."
       emptyMessage="No teams have been created yet."

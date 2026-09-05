@@ -1,9 +1,11 @@
 import ResourceList from './ResourceList.jsx'
 
 function Users() {
+  const usersApiEndpoint = '/api/users/'
+
   return (
     <ResourceList
-      componentName="users"
+      apiPath={usersApiEndpoint}
       title="Users"
       description="Athlete profiles synced from the OctoFit data tier."
       emptyMessage="No users are available yet."

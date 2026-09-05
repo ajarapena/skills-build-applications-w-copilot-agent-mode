@@ -1,9 +1,11 @@
 import ResourceList from './ResourceList.jsx'
 
 function Leaderboard() {
+  const leaderboardApiEndpoint = '/api/leaderboard/'
+
   return (
     <ResourceList
-      componentName="leaderboard"
+      apiPath={leaderboardApiEndpoint}
       title="Leaderboard"
       description="Competitive ranking based on OctoFit performance points."
       emptyMessage="No leaderboard entries are available yet."

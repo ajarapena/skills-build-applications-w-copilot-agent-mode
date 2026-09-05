@@ -16,7 +16,7 @@ When `VITE_CODESPACE_NAME` is set, API requests use:
 https://$VITE_CODESPACE_NAME-8000.app.github.dev/api/[component]/
 ```
 
-When it is not set, the app safely falls back to `http://localhost:8000/api`.
+When it is not set, the app safely falls back to `http://localhost:8000` and calls `/api/[component]/` paths.
 
 ## Scripts
 
