@@ -1,0 +1,24 @@
+import ResourceList from './ResourceList.jsx'
+
+function Leaderboard() {
+  return (
+    <ResourceList
+      componentName="leaderboard"
+      title="Leaderboard"
+      description="Competitive ranking based on OctoFit performance points."
+      emptyMessage="No leaderboard entries are available yet."
+      renderItem={(entry) => (
+        <article className="resource-card leaderboard-card" key={entry._id ?? entry.id ?? entry.rank}>
+          <div className="rank">#{entry.rank ?? '-'}</div>
+          <div>
+            <h3>{entry.user?.name ?? 'Unnamed athlete'}</h3>
+            <p>{entry.team?.name ?? 'No team assigned'}</p>
+            <strong>{entry.points ?? 0} points</strong>
+          </div>
+        </article>
+      )}
+    />
+  )
+}
+
+export default Leaderboard
