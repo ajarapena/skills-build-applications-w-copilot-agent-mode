@@ -11,6 +11,21 @@
   margin-bottom: 24px;
 }
 
+.brand {
+  align-items: center;
+  display: flex;
+  gap: 16px;
+  text-align: left;
+}
+
+.brand-logo {
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(29, 41, 32, 0.15);
+  height: 64px;
+  width: 64px;
+  object-fit: cover;
+}
+
 .eyebrow,
 .section-label {
   color: #4d7c0f;
@@ -174,4 +189,11 @@
   .resource-header {
     flex-direction: column;
   }
+}
+
+.app-footer {
+  color: #5f6f58;
+  font-size: 0.85rem;
+  margin-top: 24px;
+  text-align: center;
 }

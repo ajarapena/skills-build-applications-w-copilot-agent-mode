@@ -42,7 +42,12 @@ function ResourceList({ apiPath, description, emptyMessage, renderItem, title })
         <span className="badge text-bg-dark">{state.items.length} records</span>
       </div>
 
-      {state.status === 'loading' && <div className="alert alert-info">Loading {title.toLowerCase()}...</div>}
+      {state.status === 'loading' && (
+        <div className="alert alert-info d-flex align-items-center gap-2" role="status">
+          <span className="spinner-border spinner-border-sm" aria-hidden="true" />
+          <span>Loading {title.toLowerCase()}...</span>
+        </div>
+      )}
 
       {state.status === 'error' && (
         <div className="alert alert-danger" role="alert">
